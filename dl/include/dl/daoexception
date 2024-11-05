@@ -1,0 +1,24 @@
+#ifndef __daoexception__dl
+#define __daoexception__dl
+#include<iostream>
+#include<string.h>
+using namespace std;
+namespace inventory
+{
+namespace datalayer
+{
+class DAOEXCEPTION : public exception
+{
+string msg;
+public:
+DAOEXCEPTION();
+DAOEXCEPTION(string);
+DAOEXCEPTION(char *);
+DAOEXCEPTION (const DAOEXCEPTION &);
+DAOEXCEPTION & operator=(const DAOEXCEPTION &);
+virtual ~ DAOEXCEPTION() throw();
+const char * what() const throw();
+};
+}
+}
+#endif

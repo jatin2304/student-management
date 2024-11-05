@@ -1,0 +1,34 @@
+#ifndef __istudentdao__dl
+#define __istudentdao__dl
+#include<dl/istudent>
+#include<dl/student>
+#include<dl/daoexception>
+#include<forward_list>
+using namespace std;
+namespace inventory
+{
+namespace datalayer
+{
+namespace abc
+{
+class ISTUDENTDAO 
+{
+public:
+static string FileName;
+
+virtual void add(ISTUDENT *std) throw(DAOEXCEPTION)=0;
+virtual void update(ISTUDENT *std) throw(DAOEXCEPTION)=0;
+virtual void remove(int code) throw(DAOEXCEPTION)=0;
+virtual forward_list<ISTUDENT *> * getAll() throw(DAOEXCEPTION)=0;
+virtual ISTUDENT * getByCode(int code) throw(DAOEXCEPTION)=0;
+virtual ISTUDENT * getByName(string name) throw(DAOEXCEPTION)=0;
+virtual ISTUDENT * getByCourse(string course) throw(DAOEXCEPTION)=0;
+virtual int getCount() throw(DAOEXCEPTION)=0;
+virtual int codeExists(int code) throw(DAOEXCEPTION)=0;
+virtual int nameExists(string name) throw(DAOEXCEPTION)=0;
+virtual int courseExists(string course) throw(DAOEXCEPTION)=0;
+};
+}
+}
+}
+#endif

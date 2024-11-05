@@ -1,0 +1,44 @@
+#ifndef __studentdao__dl
+#define __studentdao__dl
+#include<dl/istudentdao>
+#include<dl/istudent>
+#include<dl/student>
+#include<dl/daoexception>
+#include<forward_list>
+#include<common/stringutils>
+using namespace std;
+using namespace stringutils;
+namespace inventory
+{
+namespace datalayer
+{
+class STUDENTDAO : public abc::ISTUDENTDAO 
+{
+public:
+class HEADER
+{
+public:
+int lastGeneratedCode;
+int numberOfRecords;
+};
+class _STUDENT
+{
+public:
+int code;
+char name[52], course[21];
+};
+void add(abc::ISTUDENT *std) throw(DAOEXCEPTION);
+void update(abc::ISTUDENT *std) throw(DAOEXCEPTION);
+void remove(int code) throw(DAOEXCEPTION);
+forward_list<abc::ISTUDENT *> * getAll() throw(DAOEXCEPTION);
+abc::ISTUDENT * getByCode(int code) throw(DAOEXCEPTION);
+abc::ISTUDENT * getByName(string name) throw(DAOEXCEPTION);
+abc::ISTUDENT * getByCourse(string course) throw(DAOEXCEPTION);
+int getCount() throw(DAOEXCEPTION);
+int codeExists(int code) throw(DAOEXCEPTION);
+int nameExists(string name) throw(DAOEXCEPTION);
+int courseExists(string course) throw(DAOEXCEPTION);
+};
+}
+}
+#endif

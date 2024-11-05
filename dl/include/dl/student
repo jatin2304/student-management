@@ -1,0 +1,29 @@
+#ifndef __student__dl
+#define __student__dl
+#include<iostream>
+#include<dl/istudent>
+using namespace std;
+namespace inventory
+{
+namespace datalayer
+{
+class STUDENT:public abc::ISTUDENT
+{
+int code;
+string name;
+string course;
+public:
+STUDENT();
+STUDENT(int,string,string);
+STUDENT(STUDENT &);
+virtual ~STUDENT();
+void setCode(int);
+int getCode() const ;
+void setName(string);
+string getName() const;
+void setCourse(string);
+string getCourse() const;
+};
+}
+}
+#endif

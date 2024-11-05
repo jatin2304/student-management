@@ -1,0 +1,24 @@
+#ifndef __istudent__dl
+#define __istudent__dl
+#include<iostream>
+using namespace std;
+namespace inventory
+{
+namespace datalayer
+{
+namespace abc
+{
+class ISTUDENT
+{
+public:
+virtual void setCode(int)=0;
+virtual int getCode() const =0;
+virtual void setName(string)=0;
+virtual string getName() const=0;
+virtual void setCourse(string)=0;
+virtual string getCourse() const=0;
+};
+}
+}
+}
+#endif
